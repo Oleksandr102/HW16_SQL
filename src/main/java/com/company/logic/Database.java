@@ -25,7 +25,7 @@ public class Database {
                 " age INTEGER, " +
                 " PRIMARY KEY (id))";
         statement.executeUpdate(sql);
-        System.out.println("Created table Student");
+        System.out.println("Created table Students");
 
         inserts(statement);
         selects(statement);

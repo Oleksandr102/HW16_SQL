@@ -15,7 +15,7 @@ public class Connect {
             System.out.println("Connecting to database...");
 
             Properties properties = new Properties();
-            FileInputStream inputStream = new FileInputStream("src/main/resources/DBcredentials");
+            FileInputStream inputStream = new FileInputStream("src/main/resources/DB.properties");
             properties.load(inputStream);
             String DB_URL = properties.getProperty("url");
             String USER = properties.getProperty("username");
