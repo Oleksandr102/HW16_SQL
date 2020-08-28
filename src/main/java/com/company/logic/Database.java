@@ -11,9 +11,7 @@ import static com.company.logic.DatabaseOperations.*;
 
 public class Database {
 
-    public void dropDB() throws IOException, SQLException {
-        Connection connection = new Connect().getConnected();
-        Statement statement;
+    public void dropDB() throws SQLException {
 
         System.out.println("Creating table");
         statement = connection.createStatement();
@@ -37,20 +35,6 @@ public class Database {
         statement.close();
         connection.close();
 
-        try {
-            if (statement != null) {
-                statement.close();
-            }
-        } catch (SQLException se) {
-
-        }
-        try {
-            if (connection != null) {
-                connection.close();
-            }
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
         System.out.println("ByeBye!");
     }
 }

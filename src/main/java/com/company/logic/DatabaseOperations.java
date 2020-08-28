@@ -1,10 +1,27 @@
 package com.company.logic;
 
+import com.company.connection.Connect;
+
+import java.io.IOException;
 import java.sql.*;
 
 public class DatabaseOperations {
 
+       public static Connection connection;
+    static {
+        try {
+            connection = new Connect().getConnected();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static Statement statement;
+
     static void inserts(Statement statement) throws SQLException {
+
         String sqlInput = "INSERT INTO Students (id, first_name, last_name, City, age) VALUES" +
                 "(1, 'Max', 'Max', 'Kyiv', 20)," +
                 "(2, 'John', 'John', 'Kyiv', 25)," +
